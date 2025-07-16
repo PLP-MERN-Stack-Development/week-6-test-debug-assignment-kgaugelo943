@@ -1,88 +1,118 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19940789&assignment_repo_type=AssignmentRepo)
-# Testing and Debugging MERN Applications
+🐛 MERN Bug Tracker
+A full-stack bug tracking application built with the MERN stack (MongoDB, Express, React, Node.js). Users can report bugs, view, update, and delete them. The project includes automated testing and modern debugging techniques.
 
-This assignment focuses on implementing comprehensive testing strategies for a MERN stack application, including unit testing, integration testing, and end-to-end testing, along with debugging techniques.
+📦 Features
+Create, read, update, and delete bug reports
 
-## Assignment Overview
+Update bug status (open, in-progress, resolved)
 
-You will:
-1. Set up testing environments for both client and server
-2. Write unit tests for React components and server functions
-3. Implement integration tests for API endpoints
-4. Create end-to-end tests for critical user flows
-5. Apply debugging techniques for common MERN stack issues
+Responsive UI with real-time form validation
 
-## Project Structure
+Error handling both on client and server
 
-```
-mern-testing/
-├── client/                 # React front-end
-│   ├── src/                # React source code
-│   │   ├── components/     # React components
-│   │   ├── tests/          # Client-side tests
-│   │   │   ├── unit/       # Unit tests
-│   │   │   └── integration/ # Integration tests
-│   │   └── App.jsx         # Main application component
-│   └── cypress/            # End-to-end tests
-├── server/                 # Express.js back-end
-│   ├── src/                # Server source code
-│   │   ├── controllers/    # Route controllers
-│   │   ├── models/         # Mongoose models
-│   │   ├── routes/         # API routes
-│   │   └── middleware/     # Custom middleware
-│   └── tests/              # Server-side tests
-│       ├── unit/           # Unit tests
-│       └── integration/    # Integration tests
-├── jest.config.js          # Jest configuration
-└── package.json            # Project dependencies
-```
+Unit and integration tests (Jest, React Testing Library, Supertest)
 
-## Getting Started
+🚀 Getting Started
+📁 Clone the Repo
+bash
+Copy
+Edit
+git clone https://github.com/your-username/mern-bug-tracker.git
+cd mern-bug-tracker
+🔧 Backend Setup
+bash
+Copy
+Edit
+cd backend
+npm install
+Create a .env file in /backend with:
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week6-Assignment.md` file
-4. Explore the starter code and existing tests
-5. Complete the tasks outlined in the assignment
+ini
+Copy
+Edit
+MONGO_URI=your_mongodb_connection_string
+PORT=5000
+Run the server:
 
-## Files Included
+bash
+Copy
+Edit
+npm run dev
+🎨 Frontend Setup
+bash
+Copy
+Edit
+cd frontend
+npm install
+npm run dev
+🧪 Running Tests
+✅ Backend Tests (Jest + Supertest)
+bash
+Copy
+Edit
+cd backend
+npm test
+Covers:
 
-- `Week6-Assignment.md`: Detailed assignment instructions
-- Starter code for a MERN application with basic test setup:
-  - Sample React components with test files
-  - Express routes with test files
-  - Jest and testing library configurations
-  - Example tests for reference
+Unit tests for helper functions
 
-## Requirements
+Integration tests for API routes (POST, GET, PUT, DELETE)
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- npm or yarn
-- Basic understanding of testing concepts
+✅ Frontend Tests (React Testing Library)
+bash
+Copy
+Edit
+cd frontend
+npm test
+Covers:
 
-## Testing Tools
+Form validation and button clicks
 
-- Jest: JavaScript testing framework
-- React Testing Library: Testing utilities for React
-- Supertest: HTTP assertions for API testing
-- Cypress/Playwright: End-to-end testing framework
-- MongoDB Memory Server: In-memory MongoDB for testing
+Component rendering with props and state
 
-## Submission
+UI changes after API calls
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+🧰 Debugging Techniques Used
+🖥️ Console Logging
+console.log() is used across frontend and backend to trace values like req.body, form inputs, and API responses.
 
-1. Complete all required tests (unit, integration, and end-to-end)
-2. Achieve at least 70% code coverage for unit tests
-3. Document your testing strategy in the README.md
-4. Include screenshots of your test coverage reports
-5. Demonstrate debugging techniques in your code
+🌐 Chrome DevTools
+Network tab: Inspect API requests and responses (status, headers, payloads)
 
-## Resources
+React DevTools: Monitor component state, props, and re-renders
 
-- [Jest Documentation](https://jestjs.io/docs/getting-started)
-- [React Testing Library Documentation](https://testing-library.com/docs/react-testing-library/intro/)
-- [Supertest Documentation](https://github.com/visionmedia/supertest)
-- [Cypress Documentation](https://docs.cypress.io/)
-- [MongoDB Testing Best Practices](https://www.mongodb.com/blog/post/mongodb-testing-best-practices) 
+🐘 Node.js Inspector
+Start the backend with debugging:
+
+bash
+Copy
+Edit
+node --inspect server.js
+Open Chrome → chrome://inspect → click “Inspect”
+Use debugger; in Express routes to pause execution.
+
+⚛️ Error Boundaries (React)
+Implemented a React Error Boundary to gracefully handle render-time crashes:
+
+jsx
+Copy
+Edit
+<ErrorBoundary>
+  <App />
+</ErrorBoundary>
+Catches broken components and shows fallback UI instead of crashing the entire app.
+
+🧪 Testing Strategy
+Level	Tool	Description
+Unit Tests	Jest	Test individual functions and components
+Integration	Supertest, React Testing Library	Test end-to-end API and UI behavior
+Mocking	jest.mock	Mock DB models and API functions
+Debugging	Chrome DevTools, Node Inspector	Track runtime errors, inspect API issues
+
+✅ Test Coverage Goals
+100% coverage of bug-related API routes
+
+Form validation logic thoroughly tested
+
+Error handling and edge cases simulated
+
